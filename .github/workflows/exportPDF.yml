@@ -39,6 +39,9 @@ jobs:
           git add project.pdf
 
           short_sha=$(echo "${{ github.sha }}" | cut -c1-7)
-          git commit -m "Add PDF for commit $short_sha"
+
+          git commit \
+            --author="${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>" \
+            -m "Add PDF for commit $short_sha"
           
           git push origin HEAD:${{ github.ref_name }}
