@@ -2,6 +2,8 @@ name: Convert Notebook to PDF
 
 on:
   push:
+    paths:
+        - 'project.ipynb'
 
 jobs:
   export-pdf:
